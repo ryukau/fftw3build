@@ -11,13 +11,13 @@ cd build || exit
 installDir="$GITHUB_WORKSPACE/install"
 mkdir -p "$installDir"
 
+# AVX512 is disabled.
 ../configure \
   --with-pic=yes \
   --enable-single \
   --enable-sse2 \
   --enable-avx \
   --enable-avx2 \
-  --enable-avx512 \
   --enable-fma \
   --enable-avx-128-fma \
   --prefix="$installDir"
