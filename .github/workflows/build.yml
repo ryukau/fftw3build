@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-macOS:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: recursive
+    - name: Run script
+      run: build.sh
+    - name: Upload
+      uses: actions/upload-artifact@v1
+      with:
+        name: install
+        path: install
