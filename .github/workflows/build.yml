@@ -7,10 +7,8 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v1
-      with:
-        submodules: recursive
     - name: Run script
-      run: build.sh
+      run: ci/build.sh
     - name: Upload
       uses: actions/upload-artifact@v1
       with:
