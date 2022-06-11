@@ -13,12 +13,13 @@ mkdir -p "$installDir"
 
 # AVX512 is disabled.
 ../configure \
+  CFLAGS="-arch arm64 -arch x86_64 -mmacosx-version-min=11.0" \
   --with-pic=yes \
   --enable-single \
   --enable-sse2 \
-  --enable-avx \
   --enable-avx2 \
   --enable-fma \
+  --enable-neon \
   --enable-avx-128-fma \
   --prefix="$installDir"
 make -j
